@@ -37,18 +37,34 @@ const StyleWrapper = styled.div`
         padding: 0;
 
         .modal {
-            border-radius: 5px;
             height: 100%;
-            background-color: white;
             width: 100%;
+            max-width: 900px;
             display: flex;
             flex-direction: column;
+            background-color: white;
+            border-radius: 5px;
             box-shadow: 3px 3px 10px gray;
+            padding: 20px;
 
             &:hover {
                 cursor: default;
             }
             
+            .modal-header-wrapper {
+                display: flex;
+                justify-content: flex-end;
+
+                .close {
+                    border: solid 1px gray;
+                    border-radius: 100%;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+
             .modal-body-wrapper {
                 display: flex;
                 flex-grow: 1;
@@ -114,7 +130,7 @@ class Dialog extends React.PureComponent {
 
                     <div className={`modal ${heightClass}`} roll="dialog">
                         <div className="modal-header-wrapper">
-                            <div onClick={this.props.handleClickClose}>X</div>
+                            <div className="close" onClick={this.props.handleClickClose}>X</div>
                         </div>
 
                         <div className="modal-body-wrapper">

@@ -4,7 +4,9 @@ import styled from 'styled-components';
 import Tag from './Tag'
 
 const StyleWrapper = styled.div`
-    padding: 20px;
+    .project-title {
+        font-size: 2em;
+    }
 
     .project-content-wrapper {
         margin-bottom: 20px;
@@ -24,6 +26,10 @@ const StyleWrapper = styled.div`
 
     .project-link-wrapper {
         margin-bottom: 20px;
+
+        a {
+            margin-right: 20px;
+        }
     }
 
     @media(min-width: 768px) {
@@ -43,11 +49,14 @@ const StyleWrapper = styled.div`
 
 class ProjectDialogContent extends React.PureComponent {
     render() {
-        const tags = this.buildTagsMarkup();
+        const links = this.buildLinksMarkup(), 
+            tags = this.buildTagsMarkup();
 
         return (
             <StyleWrapper>
-                <h2>{this.props.title}</h2>
+                <div className="project-title">
+                    {this.props.title}
+                </div>
                 
                 <div className="project-content-wrapper">
                     <div className="project-text-content-wrapper">
@@ -61,14 +70,28 @@ class ProjectDialogContent extends React.PureComponent {
                 </div>
                 
                 <div className="project-link-wrapper">
-                    <a href={this.props.link} target='_blank'>{this.props.link}</a>
+                    {links}
                 </div>
                 
-                <div>
+                <div className="poject-tags-wrapper">
                     {tags}
                 </div>
             </StyleWrapper>
         );
+    }
+
+    buildLinksMarkup() {
+        let linksMarkup = [];
+
+        this.props.links.forEach((linkData, idx) => {
+            linksMarkup.push(
+                <a href={linkData.url} target='_blank' key={idx}>
+                    {linkData.label}
+                </a>
+            );
+        });
+
+        return linksMarkup;
     }
 
     buildTagsMarkup() {
@@ -85,7 +108,7 @@ ProjectDialogContent.propTypes = {
     description: PropTypes.string.isRequired,
     moreInfo: PropTypes.string,
     learned: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
+    links: PropTypes.array, 
     tags: PropTypes.array
 }
 

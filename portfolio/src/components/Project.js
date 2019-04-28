@@ -53,7 +53,7 @@ class Project extends React.PureComponent {
                 description: this.props.description,
                 moreInfo: this.props.moreInfo,
                 learned: this.props.learned,
-                link: this.props.link,
+                links: this.props.links,
                 tags: this.props.tags
             }
 
@@ -94,7 +94,7 @@ Project.propTypes = {
     description: PropTypes.string.isRequired,
     moreInfo: PropTypes.string,
     learned: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
+    links: PropTypes.array.isRequired,
     tags: PropTypes.array
 }
 

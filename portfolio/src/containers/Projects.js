@@ -1,5 +1,5 @@
 import React from 'react';
-import Post from '../components/Post.js'
+import Project from '../components/Project';
 import styled from 'styled-components';
 
 const StyleWrapper = styled.div`
@@ -13,7 +13,9 @@ class Projects extends React.Component {
                 title: 'Learnolotl',
                 description: 'Language learning Flash-Card web-app',
                 link: 'https://cflinchbaugh.github.io/Learnolotl/',
-                tags: ['React', 'Redux', 'Web App', 'Design', 'Tested']
+                tags: ['React', 'Redux', 'Web App', 'Design', 'Tested'],
+                moreInfo: 'This is my favorite project so far, it\'s fleshed out and has a lot of potential to grow.  The idea came from when I was first learning Japanese and was writing flashcards. I wanted to be able to reference all the different versions of a word (English/Romaji/Hiragana/Katakana/Kanji) without having to cover up part of the card, and since a real notecard only has two sides- that was difficult to do.',
+                learned: 'I learned so much building this web-app.  Not only did I get to use the skills I sharpen in the office, I was able to take what I learned back and demonstrate the benefits of moving to React.'
             },
             didiAndSmilingJohnsData = {
                 title: 'DiDi & Smiling Johns',
@@ -50,15 +52,13 @@ class Projects extends React.Component {
             <StyleWrapper>
                 <h1>Projects</h1>
 
-                <h2>Stable</h2>
-                <Post {...learnolotlData} />
-                <Post {...didiAndSmilingJohnsData} />
-                <Post {...codePenData} />
+                <Project {...learnolotlData} />
+                <Project {...didiAndSmilingJohnsData} />
+                <Project {...codePenData} />
 
-                <h2>Beta</h2>
-                <Post {...webRtcData} />
-                <Post {...learnolotlNativeData} />
-                <Post {...fullStackData} />
+                <Project {...webRtcData} />
+                <Project {...learnolotlNativeData} />
+                <Project {...fullStackData} />
             </StyleWrapper>
         );
     }

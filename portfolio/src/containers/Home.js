@@ -1,11 +1,14 @@
-import React, {Component, PropTypes} from 'react';
+import React from 'react';
 
 class Home extends React.Component {
 
     render() {
         return (
             <div>
-                <h1>Hello, World!</h1>
+                <h1>Chris</h1>
+                <div>UI/UX Engineer</div>
+                <br/>
+                <a href="https://www.linkedin.com/in/christopher-flinchbaugh/">LinkedIn</a>
             </div>
         );
     }

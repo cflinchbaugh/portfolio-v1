@@ -3,7 +3,11 @@ import Project from '../components/Project';
 import styled from 'styled-components';
 
 const StyleWrapper = styled.div`
-    
+    h1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 `
 
 class Projects extends React.Component {

@@ -8,20 +8,21 @@ const StyleWrapper = styled.div`
         position: fixed;
         right: 50px;
         transition: bottom .15s, background-color .25s;
+        background-color: #262d4f;
+        color: white;
+        box-shadow: 0px 0px 15px #2824247d;
     }
     
     .label {
         padding: 5px 30px;
-        background: #262c4a;
         border-radius: 5px 5px 0 0;
-        color: white;
 
         &.closed {
             bottom: 0;
         }
 
         &.open {
-            bottom: 380px
+            bottom: 385px
         }
 
         &:hover {
@@ -32,11 +33,16 @@ const StyleWrapper = styled.div`
 
     .contents {
         display: flex;
-        border-radius: 5px 0;
+        border-radius: 5px 0 0 0;
         overflow: hidden;
+        min-height: 380px;
+        min-width: 300px;
+        border: solid 5px #262d4f;
+        border-bottom: 0;
+
 
         &.closed {
-            bottom: -380px;
+            bottom: -385px;
         }
 
         &.open {

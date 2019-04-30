@@ -6,6 +6,7 @@ const StyleWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 90vh;
 
     .triangle-topper {
         width: 0;
@@ -45,19 +46,13 @@ class About extends React.Component {
                 <div>
                     <div className="about-content-wrapper">
                         <p>
-                            If you're looking for my eduction & professional background, see <a href="https://www.linkedin.com/in/christopher-flinchbaugh/" target="_blank">LinkedId</a>.
+                            If you're looking for my eduction & professional background, see <a href="https://www.linkedin.com/in/christopher-flinchbaugh/" target="_blank">LinkedIn</a>.
                         </p>
 
                         <p>
                             Between dev-times you can find me studying Japanese, listening to lo-fi while sketching, or putting off my backlog of games in favor of some exercise.
                         </p>
                     </div>
-
-                    <div>
-                        TODO: https://www.austingrandt.com/writing/how-i-made-simple-spotify-widget-embed-music-any-page/
-                    </div>
-
-                    
 
                 </div>
 

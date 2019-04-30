@@ -6,8 +6,7 @@ const StyleWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 600px;
-
+    height: 90vh;
     
     .text-content-wrapper {
         flex-direction: column;

@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Dialog from './Dialog';
-import ProjectDialogContent from './ProjectDialogContent';
+import ProjectDetails from './ProjectDetails';
 
 const StyleWrapper = styled.div`
     border: solid 1px gray;
     padding: 5px 10px;
     display: inline-flex;
     flex-direction: column;
+    height: 100%;
     width: 100%;
     box-sizing: border-box;
 
@@ -17,12 +18,6 @@ const StyleWrapper = styled.div`
     }
 
     .image-placeholder {
-        height: 100px;
-        width: 150px;
-        border: solid 1px;
-    }
-
-    .project-images-placeholder {
         height: 100px;
         width: 150px;
         border: solid 1px;
@@ -37,6 +32,7 @@ class Project extends React.PureComponent {
     constructor(props) {
         super(props);
 
+        this.handleClickProject = this.handleClickProject.bind(this);
         this.openDialog = this.openDialog.bind(this);
         this.closeDialog = this.closeDialog.bind(this);
 
@@ -53,7 +49,7 @@ class Project extends React.PureComponent {
                 handleClickOverlay: this.closeDialog,
                 handleClickClose: this.closeDialog
             },
-            projectDialogContentData = {
+            projectDetailsData = {
                 title: this.props.title,
                 description: this.props.description,
                 moreInfo: this.props.moreInfo,
@@ -64,7 +60,8 @@ class Project extends React.PureComponent {
 
         return (
             <StyleWrapper>
-                <div onClick={this.openDialog}>
+                {/* <div onClick={this.openDialog}> */}
+                <div onClick={this.handleClickProject}>
                     {this.props.title}
 
                     <div className="image-placeholder">
@@ -73,13 +70,15 @@ class Project extends React.PureComponent {
                 </div>
 
                 <Dialog {...dialogData}>
-                    <ProjectDialogContent {...projectDialogContentData} />
+                    <ProjectDetails {...projectDetailsData} />
                 </Dialog>
             </StyleWrapper>
         );
     }
 
-    
+    handleClickProject() {
+        this.props.onClick(this.props.id);
+    }
 
     openDialog() {
         this.setState({

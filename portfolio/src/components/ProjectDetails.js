@@ -47,7 +47,7 @@ const StyleWrapper = styled.div`
 
 `
 
-class ProjectDialogContent extends React.PureComponent {
+class ProjectDetails extends React.PureComponent {
     render() {
         const links = this.buildLinksMarkup(), 
             tags = this.buildTagsMarkup();
@@ -103,7 +103,7 @@ class ProjectDialogContent extends React.PureComponent {
 
 }
 
-ProjectDialogContent.propTypes = {
+ProjectDetails.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     moreInfo: PropTypes.string,
@@ -112,4 +112,4 @@ ProjectDialogContent.propTypes = {
     tags: PropTypes.array
 }
 
-export default ProjectDialogContent;
+export default ProjectDetails;

@@ -6,10 +6,11 @@ import ProjectDialogContent from './ProjectDialogContent';
 
 const StyleWrapper = styled.div`
     border: solid 1px gray;
-    margin: 10px 0;
     padding: 5px 10px;
     display: inline-flex;
     flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
 
     &:hover {
         cursor: pointer;
@@ -25,6 +26,10 @@ const StyleWrapper = styled.div`
         height: 100px;
         width: 150px;
         border: solid 1px;
+    }
+
+    @media (min-width: 768px) {
+
     }
 `
 

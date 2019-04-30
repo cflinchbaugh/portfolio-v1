@@ -7,30 +7,23 @@ import About from './About';
 import Projects from './Projects';
 
 const StyleWrapper = styled.div`
-    .section-wrapper {
-        padding: 40px 20px;
-    }
+    
 `
 
 function App() {
   return (
       <StyleWrapper>
     <Router>
-        <Navigation />
+        {/* <Navigation /> */}
 
         {/* <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/projects" component={Projects} /> */}
 
-        <div className="section-wrapper">
-            <Home />
-        </div>
-        <div className="section-wrapper">
-            <Projects />
-        </div>
-        <div className="section-wrapper">
-            <About />
-        </div>
+        <Home />
+        <Projects />
+        <About />
+
     </Router>
     </StyleWrapper>
   );

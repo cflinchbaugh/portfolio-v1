@@ -3,10 +3,50 @@ import Project from '../components/Project';
 import styled from 'styled-components';
 
 const StyleWrapper = styled.div`
-    h1 {
+    background-color: red;
+
+    .section-heading {
+        align-items: center;
+
+        h1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .description {
+            text-align: center;
+        }
+    }
+    .projects-wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    @media(min-width: 768px) {
+        display: flex;
+        
+        .section-heading {
+            display: flex;
+            flex: 2;
+            flex-direction: column;
+
+            .description {
+                display: flex;
+            }
+        }
+
+        .projects-wrapper {
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+
+            .column {
+                display: flex;
+                flex-direction: column;
+            }
+        }
     }
 `
 
@@ -80,15 +120,30 @@ class Projects extends React.Component {
 
         return (
             <StyleWrapper>
-                <h1>Projects</h1>
+                <div className="section-heading">
+                    <h1>Projects</h1>
 
-                <Project {...learnolotlData} />
-                <Project {...didiAndSmilingJohnsData} />
-                <Project {...codePenData} />
+                    <div className="description">
+                        Most of my work is proprietary, but I enjoy learning more by working on side-projects.
 
-                <Project {...webRtcData} />
-                <Project {...learnolotlNativeData} />
-                <Project {...fullStackData} />
+                        The designs and code are mine unless noted otherwise.
+                    </div>
+                </div>
+
+                <div className="projects-wrapper">
+                    <div className="column">
+                        <Project {...learnolotlData} />
+                        <Project {...didiAndSmilingJohnsData} />
+                        <Project {...codePenData} />
+                    </div>
+                    
+                    <div className="column">
+                        <Project {...webRtcData} />
+                        <Project {...learnolotlNativeData} />
+                        <Project {...fullStackData} />
+                    </div>
+                </div>
+
             </StyleWrapper>
         );
     }

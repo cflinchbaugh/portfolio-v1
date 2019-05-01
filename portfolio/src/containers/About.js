@@ -1,12 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import Drawer from '../components/Drawer';
+import laptopImage from '../images/laptop.png';
+import readingImage from '../images/reading.png';
+import travelImage from '../images/travel.png';
 
 const StyleWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 90vh;
+    
+    color: white;
+
+    background-image: url(${readingImage});
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 
     .triangle-topper {
         width: 0;
@@ -34,15 +44,27 @@ const StyleWrapper = styled.div`
 `
 
 class About extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.updateShowInterest = this.updateShowInterest.bind(this);
+        
+        this.state = {
+            activeInterest: null
+        }
+    }
 
     render() {
         const drawerData = {
-            label: 'Music'
-        }
+                label: 'Music'
+            },
+            imageUrl = this.buildImageUrl();
+
 
         return (
-            <StyleWrapper>
+            <StyleWrapper style={{backgroundImage: `url(${imageUrl})`}}>
                 <h1>About</h1>
+
                 <div>
                     <div className="about-content-wrapper">
                         <p>
@@ -53,6 +75,10 @@ class About extends React.Component {
                             Between dev-times you can find me studying Japanese, listening to lo-fi while sketching, or putting off my backlog of games in favor of some exercise.
                         </p>
                     </div>
+
+                    <div onClick={() => {this.updateShowInterest('reading')}}>Reading</div>
+                    <div onClick={() => {this.updateShowInterest('travel')}}>Travel</div>
+                    <div onClick={() => {this.updateShowInterest('exercise')}}>Exercise</div>
 
                 </div>
 
@@ -67,6 +93,35 @@ class About extends React.Component {
                 </Drawer>
             </StyleWrapper>
         );
+    }
+
+    buildImageUrl() {
+        let imageUrl;
+
+        switch(this.state.activeInterest) {
+            case 'reading':
+                imageUrl = readingImage;
+                break;
+            
+            case 'travel':
+                imageUrl = travelImage;
+                break;
+
+            default:
+                imageUrl = laptopImage;
+        }
+        
+        return imageUrl;
+    }
+
+    updateShowInterest(interest) {
+        this.setState((prevState) => {
+            const updatedInterest = (interest === prevState.activeInterest) ? null : interest;
+
+            return {
+                activeInterest: updatedInterest
+            }
+        });
     }
 }
 

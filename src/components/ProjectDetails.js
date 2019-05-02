@@ -65,8 +65,8 @@ class ProjectDetails extends React.PureComponent {
                         <div>{this.props.learned}</div>
                     </div>
 
-                    <div className="project-images-placeholder">
-                    </div>
+                    {/* <div className="project-images-placeholder">
+                    </div> */}
                 </div>
                 
                 <div className="project-link-wrapper">

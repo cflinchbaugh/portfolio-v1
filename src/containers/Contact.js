@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import Animation from '../components/Animation';
+import BallAnimation from '../components/BallAnimation';
 
 const StyleWrapper = styled.div`
     display: flex;
@@ -7,7 +9,8 @@ const StyleWrapper = styled.div`
     align-items: center;
     justify-content: center;
     height: 90vh;
-    background: red;
+    background: #FE8A75;
+    background: linear-gradient(to right, #B5CBED 0%,#FE8A75 100%);
     
     .text-content-wrapper {
         flex-direction: column;
@@ -40,8 +43,17 @@ class Contact extends React.Component {
 
     render() {
         return (
+            
             <StyleWrapper>
+                {/* <Animation /> */}
+                {/* <BallAnimation /> */}
+
                 <div className="text-content-wrapper">
+
+                    <div className="message">
+                        You've heard a bit about me, I'd love to hear from you.
+                    </div>
+                    
                     <div className="contact-info">
                         <a href="https://www.linkedin.com/in/christopher-flinchbaugh/">LinkedIn</a>
                         <a href="https://github.com/cflinchbaugh">GitHub</a>

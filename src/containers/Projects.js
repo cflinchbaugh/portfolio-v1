@@ -3,9 +3,11 @@ import Project from '../components/Project';
 import styled from 'styled-components';
 import ProjectsData from '../data/projects';
 import ProjectDetails from '../components/ProjectDetails';
+import Dialog from '../components/Dialog';
 
 const StyleWrapper = styled.div`
-    background-color: red;
+    background: #FE8A75;
+    background: linear-gradient(to right, #B5CBED 0%,#FE8A75 100%);
     min-height: 90vh;
 
     .section-heading {
@@ -21,6 +23,12 @@ const StyleWrapper = styled.div`
             text-align: center;
         }
     }
+
+    .description,
+    .active-project-details-wrapper {
+        margin: 20px;
+    }
+
     .projects-wrapper {
         display: flex;
         flex-direction: column;
@@ -40,6 +48,13 @@ const StyleWrapper = styled.div`
             }
         }
 
+        .active-project-details-wrapper {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: center;
+        }
+
         .projects-wrapper {
             display: flex;
             flex: 1;
@@ -50,7 +65,6 @@ const StyleWrapper = styled.div`
             .column {
                 display: flex;
                 flex-direction: column;
-                background: blue;
                 height: 100%;
                 width: 100%;
             }
@@ -65,14 +79,15 @@ class Projects extends React.Component {
         this.handleClickProject = this.handleClickProject.bind(this);
 
         this.state = {
-            activeProjectId: null
+            activeProjectId: null,
+            showDialog: false
         }
     }
 
     render() {
         const projects = this.buildProjects(),
-            activeProjectDetails = this.buildActiveProjectDetails();
-
+            activeProjectDetailsMarkup = this.buildActiveProjectMarkup();
+            
         return (
             <StyleWrapper>
                 <div className="section-heading">
@@ -84,7 +99,10 @@ class Projects extends React.Component {
                         The designs and code are mine unless noted otherwise.
                     </div>
 
-                    <div>{activeProjectDetails}</div>
+                    <div className="active-project-details-wrapper">
+                        {activeProjectDetailsMarkup}
+                    </div>
+                    
                 </div>
 
                 <div className="projects-wrapper">
@@ -95,6 +113,31 @@ class Projects extends React.Component {
 
             </StyleWrapper>
         );
+    }
+
+    buildActiveProjectMarkup() {
+        let markup;
+
+        const activeProjectDetails = this.buildActiveProjectDetails(),
+            dialogData = {
+                dynamicHeight: false,
+                show: this.state.showDialog,
+                size: 'large',
+                handleClickOverlay: () => { this.setState({showDialog: false})},
+                handleClickClose: () => { this.setState({showDialog: false})}
+            };
+
+        if (document.documentElement.clientWidth < 768) {
+            markup = (
+                <Dialog {...dialogData}>
+                    {activeProjectDetails}
+                </Dialog>
+            );
+        } else {
+            markup = activeProjectDetails;
+        }
+
+        return markup;
     }
 
     buildProjects() {
@@ -127,7 +170,8 @@ class Projects extends React.Component {
 
     handleClickProject(id) {
         this.setState({
-            activeProjectId: id
+            activeProjectId: id,
+            showDialog: true
         });
     }
 }

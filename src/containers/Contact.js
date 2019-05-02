@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Animation from '../components/Animation';
-import BallAnimation from '../components/BallAnimation';
 
 const StyleWrapper = styled.div`
     display: flex;
@@ -45,9 +43,6 @@ class Contact extends React.Component {
         return (
             
             <StyleWrapper>
-                {/* <Animation /> */}
-                {/* <BallAnimation /> */}
-
                 <div className="text-content-wrapper">
 
                     <div className="message">

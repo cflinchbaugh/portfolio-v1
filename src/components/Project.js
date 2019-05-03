@@ -15,11 +15,6 @@ const StyleWrapper = styled.div`
         cursor: pointer;
     }
 
-    .project {
-        display: flex;
-        flex: 1;
-    }
-
     @media (min-width: 768px) {
 
     }
@@ -35,10 +30,8 @@ class Project extends React.PureComponent {
 
     render() {
         return (
-            <StyleWrapper>
-                <div className="project" onClick={this.handleClickProject}>
-                    {this.props.title}
-                </div>
+            <StyleWrapper onClick={this.handleClickProject}>
+                {this.props.title}
             </StyleWrapper>
         );
     }

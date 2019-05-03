@@ -4,17 +4,23 @@ import styled from 'styled-components';
 import Tag from './Tag'
 
 const StyleWrapper = styled.div`
+    border: solid 1px;
+    padding: 20px;
+
     .project-title {
         font-size: 2em;
+        font-family: 'Ubuntu Condensed', sans-serif;
+    }
+
+    .project-description {
+        font-size: .85em;
     }
 
     .project-content-wrapper {
-        margin-bottom: 20px;
+        margin: 10px 0;
     }
 
     .project-text-content-wrapper {
-        margin-right: 20px;
-
         div {
             margin-bottom: 10px;
         }
@@ -30,6 +36,11 @@ const StyleWrapper = styled.div`
         a {
             margin-right: 20px;
         }
+    }
+
+    .tag-wrapper {
+        display: inline-block;
+        margin-right: 10px;
     }
 
     @media(min-width: 768px) {
@@ -58,9 +69,14 @@ class ProjectDetails extends React.PureComponent {
                     {this.props.title}
                 </div>
                 
+                <div className="project-description">
+                    {this.props.description}
+                </div>
+
+                
                 <div className="project-content-wrapper">
                     <div className="project-text-content-wrapper">
-                        <div>{this.props.description}</div>
+                        
                         <div>{this.props.moreInfo}</div>
                         <div>{this.props.learned}</div>
                     </div>
@@ -96,7 +112,11 @@ class ProjectDetails extends React.PureComponent {
 
     buildTagsMarkup() {
         return this.props.tags.map((tag, idx) => {
-            return (<Tag tag={tag} key={idx}/>);
+            return (
+                <div className="tag-wrapper">
+                    <Tag tag={tag} key={idx}/>
+                </div>
+            );
         });
     }
 

@@ -6,7 +6,7 @@ const StyleWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 90vh;
+    height: 100vh;
     
     .text-content-wrapper {
         flex-direction: column;
@@ -28,6 +28,7 @@ const StyleWrapper = styled.div`
     }
     .initials {
         font-size: 10em;
+        font-family: 'Ubuntu Condensed', sans-serif;
     }
 
     .contact-info {

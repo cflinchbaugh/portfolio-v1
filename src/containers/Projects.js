@@ -6,9 +6,11 @@ import ProjectDetails from '../components/ProjectDetails';
 import Dialog from '../components/Dialog';
 
 const StyleWrapper = styled.div`
-    background: #FE8A75;
+    box-sizing: border-box;
+    // background: #FE8A75;
     background: linear-gradient(to right, #B5CBED 0%,#FE8A75 100%);
-    min-height: 90vh;
+    min-height: 100vh;
+    padding: 10vh 10vw;
 
     .section-heading {
         align-items: center;
@@ -21,12 +23,12 @@ const StyleWrapper = styled.div`
     
         .description {
             text-align: center;
+            margin: 20px;
         }
     }
 
-    .description,
     .active-project-details-wrapper {
-        margin: 20px;
+        margin: 0 5vw;
     }
 
     .projects-wrapper {
@@ -40,11 +42,12 @@ const StyleWrapper = styled.div`
         
         .section-heading {
             display: flex;
-            flex: 2;
+            flex: 4;
             flex-direction: column;
 
             .description {
                 display: flex;
+                margin: 3vh 2vw 7vh 2vh;
             }
         }
 
@@ -52,21 +55,25 @@ const StyleWrapper = styled.div`
             display: flex;
             flex-direction: column;
             flex-grow: 1;
-            justify-content: center;
         }
 
         .projects-wrapper {
             display: flex;
             flex: 1;
             flex-direction: row;
-            margin: 0 5vw;
             width: 30vw;
 
             .column {
                 display: flex;
                 flex-direction: column;
+                justify-content: center;
                 height: 100%;
                 width: 100%;
+
+                .project-wrapper {
+                    height: 10vh;
+                    margin: 2vh;
+                }
             }
         }
     }
@@ -95,8 +102,6 @@ class Projects extends React.Component {
 
                     <div className="description">
                         Most of my work is proprietary, but I enjoy learning more by working on side-projects.
-
-                        The designs and code are mine unless noted otherwise.
                     </div>
 
                     <div className="active-project-details-wrapper">
@@ -150,7 +155,11 @@ class Projects extends React.Component {
                 onClick: this.handleClickProject
             }
 
-            projects.push(<Project {...projectData} />)
+            projects.push((
+                <div className="project-wrapper" key={key}>
+                    <Project {...projectData} />
+                </div>)
+            );
         }
 
         return projects;

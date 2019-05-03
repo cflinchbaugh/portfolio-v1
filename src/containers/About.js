@@ -29,6 +29,11 @@ const StyleWrapper = styled.div`
     .about-content-wrapper {
         display: flex;
         flex-direction: column;
+        border-radius: 10px;
+        background: #00000099;
+        margin: 5vh 5vw;
+        padding: 2vh 2vw;
+
 
         p {
             flex: 2;
@@ -63,10 +68,11 @@ class About extends React.Component {
 
         return (
             <StyleWrapper style={{backgroundImage: `url(${imageUrl})`}}>
-                <h1>About</h1>
 
                 <div>
                     <div className="about-content-wrapper">
+                        <h1>About</h1>
+
                         <p>
                             If you're looking for my eduction & professional background, see <a href="https://www.linkedin.com/in/christopher-flinchbaugh/" target="_blank">LinkedIn</a>.
                         </p>

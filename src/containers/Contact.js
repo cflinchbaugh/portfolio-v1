@@ -17,6 +17,12 @@ const StyleWrapper = styled.div`
         display: flex;
         flex-grow: 1;
         justify-content: center;
+        height: 20vh;
+        justify-content: space-between;
+
+        .message {
+            text-align: center;
+        }
     }
     
 
@@ -46,7 +52,9 @@ class Contact extends React.Component {
                 <div className="text-content-wrapper">
 
                     <div className="message">
-                        You've heard a bit about me, I'd love to hear from you.
+                        You've heard a bit about me,
+                        <br/>
+                        I'd love to hear from you.
                     </div>
                     
                     <div className="contact-info">

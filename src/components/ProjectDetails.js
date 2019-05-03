@@ -4,7 +4,9 @@ import styled from 'styled-components';
 import Tag from './Tag'
 
 const StyleWrapper = styled.div`
-    border: solid 1px;
+    background-color: rgba(0, 0, 0, 0.25);
+    color: white;
+    border-radius: 10px;
     padding: 20px;
 
     .project-title {

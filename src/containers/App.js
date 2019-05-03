@@ -8,7 +8,8 @@ import Projects from './Projects';
 import Contact from './Contact';
 
 const StyleWrapper = styled.div`
-    
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1.2em;
 `
 
 function App() {

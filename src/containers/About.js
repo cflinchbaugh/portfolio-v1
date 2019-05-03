@@ -34,12 +34,10 @@ const StyleWrapper = styled.div`
         margin: 5vh 5vw;
         padding: 2vh 2vw;
 
-
         p {
             flex: 2;
             margin: 0 10px 0 0;
         }
-
     }
     
     iframe {

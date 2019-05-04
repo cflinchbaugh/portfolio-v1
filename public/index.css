@@ -4,6 +4,10 @@ body {
   font-family: sans-serif;
 }
 
+a {
+    color: #8ED4A3;
+}
+
 ::-webkit-scrollbar {
   width: 12px;
 }

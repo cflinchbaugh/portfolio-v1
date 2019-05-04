@@ -21,10 +21,10 @@ const StyleWrapper = styled.div`
         flex-grow: 1;
         justify-content: center;
         height: 20vh;
-        justify-content: space-between;
 
         .message {
             text-align: center;
+            margin-bottom: 20px;
         }
     }
     
@@ -44,6 +44,7 @@ const StyleWrapper = styled.div`
 
         .text-content-wrapper {
             max-width: 1000px;
+            justify-content: space-between;
         }
        
     }

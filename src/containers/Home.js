@@ -7,6 +7,7 @@ const StyleWrapper = styled.div`
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background: linear-gradient(to bottom,#ffffff00 85%, #fe8a7540 100%);
     
     .text-content-wrapper {
         flex-direction: column;

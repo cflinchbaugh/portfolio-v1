@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Tag from './Tag'
 
 const StyleWrapper = styled.div`
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.45);
     color: white;
     border-radius: 10px;
     padding: 20px;

@@ -8,7 +8,7 @@ import Dialog from '../components/Dialog';
 const StyleWrapper = styled.div`
     box-sizing: border-box;
     // background: #FE8A75;
-    background: linear-gradient(to right, #B5CBED 0%,#FE8A75 100%);
+    background: linear-gradient(to bottom, #fe8a7540 0%, #B5CBED 100%);
     min-height: 100vh;
     padding: 10vh 10vw;
 

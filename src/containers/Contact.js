@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import GitHub from '../images/GitHub.png';
+import LinkedIn from '../images/LinkedIn.png';
+import email from '../images/email.png';
 
 const StyleWrapper = styled.div`
     display: flex;
@@ -29,6 +32,10 @@ const StyleWrapper = styled.div`
     .contact-info {
         a {
             margin: 0 5px;
+
+            img {
+                height: 32px;
+            }
         }
     }
 
@@ -56,11 +63,21 @@ class Contact extends React.Component {
                         <br/>
                         I'd love to hear from you.
                     </div>
+
+                    
                     
                     <div className="contact-info">
-                        <a href="https://www.linkedin.com/in/christopher-flinchbaugh/">LinkedIn</a>
-                        <a href="https://github.com/cflinchbaugh">GitHub</a>
-                        <a href="mailto:christopher.e.flinchbaugh@gmail.com">Contact</a>
+                        <a href="https://www.linkedin.com/in/christopher-flinchbaugh/" target="_blank">
+                            <img src={`${LinkedIn}`}></img>
+                        </a>
+
+                        <a href="https://github.com/cflinchbaugh" target="_blank">
+                            <img src={`${GitHub}`}></img>
+                        </a>
+                            
+                        <a href="mailto:christopher.e.flinchbaugh@gmail.com">
+                            <img src={`${email}`}></img>
+                        </a>
                     </div>
                 </div>
             </StyleWrapper>

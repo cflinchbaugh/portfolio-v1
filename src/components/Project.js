@@ -2,19 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const StyleWrapper = styled.div`
-    border: solid 1px gray;
-    padding: 5px 10px;
-    display: inline-flex;
-    flex-direction: column;
+const StyleWrapper = styled.button`
     height: 100%;
     width: 100%;
     box-sizing: border-box;
+    padding: 0;
+    border: none;
 
     &:hover {
         cursor: pointer;
     }
 
+    .title-wrapper {
+        display: inline-flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+
+    .active {
+        background-color: #a1848c;
+    }
     @media (min-width: 768px) {
 
     }
@@ -29,9 +37,13 @@ class Project extends React.PureComponent {
     }
 
     render() {
+        const statusClass = this.props.isActive ? 'active' : 'inactive';
+
         return (
             <StyleWrapper onClick={this.handleClickProject}>
-                {this.props.title}
+                <div className={`title-wrapper ${statusClass}`}>
+                    {this.props.title}
+                </div>
             </StyleWrapper>
         );
     }

@@ -86,7 +86,7 @@ class Projects extends React.Component {
         this.handleClickProject = this.handleClickProject.bind(this);
 
         this.state = {
-            activeProjectId: null,
+            activeProjectId: 'learnolotlData',
             showDialog: false
         }
     }
@@ -152,7 +152,8 @@ class Projects extends React.Component {
             let projectData = {
                 ...ProjectsData[key],
                 key: key,
-                onClick: this.handleClickProject
+                onClick: this.handleClickProject,
+                isActive: this.state.activeProjectId === key
             }
 
             projects.push((

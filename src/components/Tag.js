@@ -4,9 +4,9 @@ import styled from 'styled-components';
 
 const StyleWrapper = styled.div`
     display: inline-block;
-    padding: 3px 5px;
+    padding: 7px 8.5px;
     border-radius: 5px;
-    background-color: green;
+    background-color: #63264A;
     color: white;
     font-size: .75em;
     font-family: sans-serif;

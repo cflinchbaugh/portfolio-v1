@@ -38,6 +38,21 @@ const StyleWrapper = styled.div`
         }
     }
 
+    .arrow-wrapper {
+        border: solid 2px;
+        border-radius: 100%;
+        padding: 20px;
+        margin-top: 30px;
+        
+        .arrow {
+            height: 10px;
+            width: 10px;
+            border-bottom: solid 2px;
+            border-right: solid 2px;
+            transform: rotate(45deg);
+        }
+    }
+
     @media(min-width: 768px) {
         flex-direction: row;
 
@@ -73,14 +88,9 @@ class Home extends React.Component {
                         <div className="title">Front-End Developer | UI/UX Engineer</div>
                     </div>
 
-                        
-                    
-                    
-                    {/* <div className="contact-info">
-                        <a href="https://www.linkedin.com/in/christopher-flinchbaugh/">LinkedIn</a>
-                        <a href="https://github.com/cflinchbaugh">GitHub</a>
-                        <a href="mailto:christopher.e.flinchbaugh@gmail.com">Contact</a>
-                    </div> */}
+                    <div className="arrow-wrapper">
+                        <div className="arrow"></div>
+                    </div>
                 </div>
             </StyleWrapper>
         );

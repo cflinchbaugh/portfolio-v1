@@ -115,8 +115,8 @@ class ProjectDetails extends React.PureComponent {
     buildTagsMarkup() {
         return this.props.tags.map((tag, idx) => {
             return (
-                <div className="tag-wrapper">
-                    <Tag tag={tag} key={idx}/>
+                <div className="tag-wrapper" key={idx}>
+                    <Tag tag={tag} />
                 </div>
             );
         });

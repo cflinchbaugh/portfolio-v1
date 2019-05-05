@@ -35,6 +35,10 @@ const StyleWrapper = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        .project-wrapper {
+            margin: 10px;
+        }
     }
 
     @media(min-width: 768px) {

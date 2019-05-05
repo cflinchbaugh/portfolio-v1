@@ -14,10 +14,14 @@ const StyleWrapper = styled.button`
     }
 
     .title-wrapper {
+        padding: 10px;
+        box-sizing: border-box;
         display: inline-flex;
         flex-direction: column;
         height: 100%;
         width: 100%;
+        justify-content: center;
+        border: solid;
     }
 
     .active {

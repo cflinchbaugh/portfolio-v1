@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import GitHub from '../images/GitHub.png';
 import LinkedIn from '../images/LinkedIn.png';
-import email from '../images/email.png';
 
 const StyleWrapper = styled.div`
     display: flex;
@@ -30,13 +29,32 @@ const StyleWrapper = styled.div`
     
 
     .contact-info {
+        display: flex;
+        
         a {
+            display: inline-flex;
+            flex-direction: row;
             margin: 0 5px;
+            text-decoration: none;
 
             img {
                 height: 32px;
             }
         }
+        
+        .email-icon {
+            color: white;
+            font-size: 32px;
+        }
+
+    }
+    
+    .show {
+        display: block;
+    }
+
+    .hide {
+        display: none;
     }
 
     @media(min-width: 768px) {
@@ -52,10 +70,18 @@ const StyleWrapper = styled.div`
 `
 
 class Contact extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            revealEmail : false
+        }
+    }
 
     render() {
+        const emailClass = this.state.revealEmail ? 'show' : 'hide';
+
         return (
-            
             <StyleWrapper>
                 <div className="text-content-wrapper">
 
@@ -64,21 +90,25 @@ class Contact extends React.Component {
                         <br/>
                         I'd love to hear from you.
                     </div>
-
-                    
                     
                     <div className="contact-info">
                         <a href="https://www.linkedin.com/in/christopher-flinchbaugh/" target="_blank">
                             <img src={`${LinkedIn}`}></img>
                         </a>
 
+                        <span onClick={ ()=>{ this.setState({ revealEmail: true})}}>
+                        <a href="mailto:christopher.e.flinchbaugh@gmail.com">
+                            <span className="email-icon">@</span>
+                        </a>
+                        </span>
+
                         <a href="https://github.com/cflinchbaugh" target="_blank">
                             <img src={`${GitHub}`}></img>
                         </a>
-                            
-                        <a href="mailto:christopher.e.flinchbaugh@gmail.com">
-                            <img src={`${email}`}></img>
-                        </a>
+                    </div>
+
+                    <div className={`${emailClass}`}>
+                        christopher.e.flinchbaugh@gmail.com
                     </div>
                 </div>
             </StyleWrapper>

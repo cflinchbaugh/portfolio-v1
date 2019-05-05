@@ -5,7 +5,7 @@ import laptopImage from '../images/laptop.png';
 import readingImage from '../images/reading.png';
 import travelImage from '../images/travel.png';
 
-const StyleWrapper = styled.div`
+const StyleWrapper = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;

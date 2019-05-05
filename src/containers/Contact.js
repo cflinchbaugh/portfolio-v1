@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import GitHub from '../images/GitHub.png';
 import LinkedIn from '../images/LinkedIn.png';
 
-const StyleWrapper = styled.div`
+const StyleWrapper = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;

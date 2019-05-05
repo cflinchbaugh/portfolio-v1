@@ -5,7 +5,7 @@ import ProjectsData from '../data/projects';
 import ProjectDetails from '../components/ProjectDetails';
 import Dialog from '../components/Dialog';
 
-const StyleWrapper = styled.div`
+const StyleWrapper = styled.section`
     box-sizing: border-box;
     // background: #FE8A75;
     background: linear-gradient(to bottom, #fe8a7540 0%, #B5CBED 100%);

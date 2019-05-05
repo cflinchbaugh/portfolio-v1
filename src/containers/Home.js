@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyleWrapper = styled.div`
+const StyleWrapper = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;

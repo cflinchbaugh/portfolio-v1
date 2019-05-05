@@ -14,8 +14,33 @@ const StyleWrapper = styled.section`
         font-size: 1.25em;
     }
 
-    .skill {
-        margin: 10px;
+    .skills-wrapper {
+        display: flex;
+        flex-direction: column;
+        
+        .skill {
+            margin: 20px;
+
+            .skill-heading {
+                font-weight: bold;
+            }
+        }
+    }
+    
+
+    @media(min-width: 768px) {
+        .skills-wrapper {
+            flex-direction: row;
+            width: 90vw;
+            
+            .skill {
+                font-size: .85em;
+                border: solid 1px;
+                padding: 20px;
+                width: 30%;
+                margin: 10px;
+            }
+        }
     }
     
 `
@@ -35,17 +60,37 @@ class Skills extends React.Component {
                 <div className="heading">
                     What sets me apart?
                 </div>
-                
-                <div className="skill">
-                    Communication: I specialize in <strong>people</strong>.  Identifying and communicating core messages to intended internal and external audiences every day is my mission.
-                </div>
 
-                <div className="skill">
-                    Fresh Eyes: Reviewing content without preconceptions is essential to not missing the forest for the trees. Ensuring the best solutions are implemented, not just the most convenient, is my strategy.
-                </div>
+                <div className="skills-wrapper">
+                    <div className="skill">
+                        <div className="skill-heading">
+                            Communication
+                        </div>
 
-                <div className="skill">
-                    Focus: Solving the root problem, identifying process gaps, and ensuring consistency is my drive.
+                        <div>
+                            I specialize in <strong>people</strong>.  Identifying and communicating core messages to intended internal and external audiences every day is my mission.
+                        </div>
+                    </div>
+
+                    <div className="skill">
+                        <div className="skill-heading">
+                            Fresh Eyes
+                        </div>
+
+                        <div>
+                            Reviewing content without preconceptions is essential to not missing the forest for the trees. Ensuring the best solutions are implemented, not just the most convenient, is my strategy.
+                        </div>
+                    </div>
+
+                    <div className="skill">
+                        <div className="skill-heading">
+                            Focus
+                        </div>
+                        
+                        <div>
+                            Solving the root problem, identifying process gaps, and ensuring consistency is my drive.
+                        </div>
+                    </div>
                 </div>
                 
 

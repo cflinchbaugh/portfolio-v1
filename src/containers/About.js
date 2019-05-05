@@ -72,7 +72,7 @@ class About extends React.Component {
                         <h1>About</h1>
 
                         <p>
-                            If you're looking for my eduction & professional background, see <a href="https://www.linkedin.com/in/christopher-flinchbaugh/" target="_blank">LinkedIn</a>.
+                            If you're looking for my education & professional background, see <a href="https://www.linkedin.com/in/christopher-flinchbaugh/" target="_blank">LinkedIn</a>.
                         </p>
 
                         <p>
@@ -80,9 +80,9 @@ class About extends React.Component {
                         </p>
                     </div>
 
-                    <div onClick={() => {this.updateShowInterest('reading')}}>Reading</div>
+                    {/* <div onClick={() => {this.updateShowInterest('reading')}}>Reading</div>
                     <div onClick={() => {this.updateShowInterest('travel')}}>Travel</div>
-                    <div onClick={() => {this.updateShowInterest('exercise')}}>Exercise</div>
+                    <div onClick={() => {this.updateShowInterest('exercise')}}>Exercise</div> */}
 
                 </div>
 

@@ -55,9 +55,6 @@ const StyleWrapper = styled.div`
                 justify-content: flex-end;
 
                 .close {
-                    border: solid 1px gray;
-                    border-radius: 100%;
-
                     &:hover {
                         cursor: pointer;
                     }

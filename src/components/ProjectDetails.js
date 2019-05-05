@@ -42,7 +42,7 @@ const StyleWrapper = styled.div`
 
     .tag-wrapper {
         display: inline-block;
-        margin-right: 10px;
+        margin: 5px;
     }
 
     @media(min-width: 768px) {

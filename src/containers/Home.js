@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ArrowButton from '../components/ArrowButton';
 
 const StyleWrapper = styled.section`
     display: flex;
@@ -35,21 +36,6 @@ const StyleWrapper = styled.section`
     .contact-info {
         a {
             margin: 0 5px;
-        }
-    }
-
-    .arrow-wrapper {
-        border: solid 2px;
-        border-radius: 100%;
-        padding: 20px;
-        margin-top: 30px;
-        
-        .arrow {
-            height: 10px;
-            width: 10px;
-            border-bottom: solid 2px;
-            border-right: solid 2px;
-            transform: rotate(45deg);
         }
     }
 
@@ -96,9 +82,7 @@ class Home extends React.Component {
                         <div className="title">Front-End Developer | UI/UX Engineer</div>
                     </div>
 
-                    <div className="arrow-wrapper">
-                        <div className="arrow" onClick={this.handleClickArrow}></div>
-                    </div>
+                    <ArrowButton handleClick={this.handleClickArrow} />
                 </div>
             </StyleWrapper>
         );

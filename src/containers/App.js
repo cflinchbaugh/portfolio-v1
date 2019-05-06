@@ -9,38 +9,64 @@ import Projects from './Projects';
 import Contact from './Contact';
 
 const StyleWrapper = styled.div`
-    font-family: 'PT Sans', sans-serif;
-    font-size: 1.2em;
-    
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y proximity;
+font-family: 'PT Sans', sans-serif;
+font-size: 1.2em;
 
-    section {
-        scroll-snap-align: start;
-        min-height: 100%;
-    }
+height: 100vh;
+overflow-y: scroll;
+scroll-snap-type: y proximity;
+
+section {
+    scroll-snap-align: start;
+    min-height: 100%;
+}
 `
 
-function App() {
-  return (
-      <StyleWrapper>
-    <Router>
-        {/* <Navigation /> */}
+class App extends React.Component {
+  constructor(props) {
+      super(props)
+      
+      this.skillsRef = React.createRef();
+  
+  }
+  
+  scroll(ref) {
+      ref.current.scrollIntoView({behavior: 'smooth'})
+  }
 
-        {/* <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/projects" component={Projects} /> */}
+  render() {
+    const homeData = {
+      scroll: this.scroll,
+      nextSection: this.skillsRef
+    }
 
-        <Home />
-        <Skills />
-        <Projects />
-        <About />
-        <Contact />
+    return (
+        <StyleWrapper>
+          <Router>
+              <div id="home">
+                <Home {...homeData}/>
+              </div>
+              
+              <div id="skills" ref={this.skillsRef}>
+                <Skills />
+              </div>
+              
+              <div id="projects">
+                <Projects />
+              </div>
 
-    </Router>
-    </StyleWrapper>
-  );
+              <div id="about">
+                <About />
+              </div>
+
+              <div id="contact">
+                <Contact />
+              </div>
+
+          </Router>
+      </StyleWrapper>
+    );
+  }
 }
 
 export default App;

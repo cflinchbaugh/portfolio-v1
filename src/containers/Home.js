@@ -75,6 +75,14 @@ const StyleWrapper = styled.section`
 `
 
 class Home extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.myRef = React.createRef();
+
+        this.handleClickArrow = this.handleClickArrow.bind(this);
+    
+    }
 
     render() {
         return (
@@ -89,11 +97,15 @@ class Home extends React.Component {
                     </div>
 
                     <div className="arrow-wrapper">
-                        <div className="arrow"></div>
+                        <div className="arrow" onClick={this.handleClickArrow}></div>
                     </div>
                 </div>
             </StyleWrapper>
         );
+    }
+
+    handleClickArrow() {
+        this.props.scroll(this.props.nextSection);
     }
 }
 

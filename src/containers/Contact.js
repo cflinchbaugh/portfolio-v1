@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import GitHub from '../images/GitHub.png';
 import LinkedIn from '../images/LinkedIn.png';
+import Email from '../images/emailIcon.png';
 
 const StyleWrapper = styled.section`
     display: flex;
@@ -98,7 +99,8 @@ class Contact extends React.Component {
 
                         <span onClick={ ()=>{ this.setState({ revealEmail: true})}}>
                         <a href="mailto:christopher.e.flinchbaugh@gmail.com">
-                            <span className="email-icon">@</span>
+                            {/* <span className="email-icon">@</span> */}
+                            <img src={`${Email}`}></img>
                         </a>
                         </span>
 

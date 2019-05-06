@@ -61,6 +61,10 @@ const StyleWrapper = styled.section`
             flex-grow: 1;
         }
 
+        .dialog-wrapper {
+            display: none;
+        }
+
         .projects-wrapper {
             display: flex;
             flex: 1;
@@ -138,9 +142,11 @@ class Projects extends React.Component {
 
         if (document.documentElement.clientWidth < 768) {
             markup = (
-                <Dialog {...dialogData}>
-                    {activeProjectDetails}
-                </Dialog>
+                <div className="dialog-wrapper">
+                    <Dialog {...dialogData}>
+                        {activeProjectDetails}
+                    </Dialog>
+                </div>
             );
         } else {
             markup = activeProjectDetails;

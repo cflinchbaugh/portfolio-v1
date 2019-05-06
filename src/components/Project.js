@@ -24,11 +24,10 @@ const StyleWrapper = styled.button`
         border: solid;
     }
 
-    .active {
-        background-color: #a1848c;
-    }
     @media (min-width: 768px) {
-
+        .active {
+            background-color: #a1848c;
+        }
     }
 `
 

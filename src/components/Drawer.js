@@ -29,6 +29,10 @@ const StyleWrapper = styled.div`
             cursor: pointer;
             background-color: #161a2f;
         }
+
+        img {
+            max-height: 20px;
+        }
     }
 
     .contents {

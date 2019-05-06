@@ -68,7 +68,7 @@ class Skills extends React.Component {
                         </div>
 
                         <div>
-                            I specialize in <strong>people</strong>.  Identifying and communicating core messages to intended internal and external audiences every day is my mission.
+                            I specialize in <i>people</i>.  Identifying and communicating core messages to audiences every day is my mission.
                         </div>
                     </div>
 
@@ -78,7 +78,7 @@ class Skills extends React.Component {
                         </div>
 
                         <div>
-                            Reviewing content without preconceptions is essential to not missing the forest for the trees. Ensuring the best solutions are implemented, not just the most convenient, is my strategy.
+                            Reviewing content without preconceptions is essential to not missing the forest for the trees. Implementing the best solutions, not just the most convenient, is my strategy.
                         </div>
                     </div>
 

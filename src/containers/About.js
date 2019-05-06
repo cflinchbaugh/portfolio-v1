@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Drawer from '../components/Drawer';
+import MusicNote from '../images/MusicNote.png';
 import laptopImage from '../images/laptop.png';
 import readingImage from '../images/reading.png';
 import travelImage from '../images/travel.png';
@@ -59,7 +60,7 @@ class About extends React.Component {
 
     render() {
         const drawerData = {
-                label: 'Music'
+                label: <img src={`${MusicNote}`}></img>
             },
             imageUrl = this.buildImageUrl();
 

@@ -22,6 +22,7 @@ const StyleWrapper = styled.button`
         width: 100%;
         justify-content: center;
         border: solid;
+        border-radius: 3px;
     }
 
     @media (min-width: 768px) {

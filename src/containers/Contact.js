@@ -40,6 +40,14 @@ const StyleWrapper = styled.section`
 
             img {
                 height: 32px;
+                background-color: #cf0276;
+                border-radius: 15px;
+                padding: 5px;
+                transition: background 0.15s;
+
+                &:hover {
+                    background-color: #970256;
+                }
             }
         }
         

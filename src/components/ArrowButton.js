@@ -7,11 +7,15 @@ const StyleWrapper = styled.div`
     border-radius: 100%;
     padding: 20px;
     margin-top: 30px;
-    transition: background 0.15s;
+    transition: background-color 0.15s, color 0.15s;
 
     &:hover {
-        background: #a1848c;
+        background-color: #970256;
         cursor: pointer;
+
+        .arrow {
+            color: white;
+        }
     }
     
     .arrow {

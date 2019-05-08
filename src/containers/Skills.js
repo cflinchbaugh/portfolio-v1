@@ -35,80 +35,7 @@ const StyleWrapper = styled.section`
    }
     
 
-    // @media(min-width: 768px) {
-    //     .content-wrapper {
-    //         width: 80vw;
-    //         max-width: 1200px;
-    //         display: flex;
-    //         flex-wrap: wrap;
-    //         justify-content: center;
-    //     }
-
-    //     .primary,
-    //     .content-1,
-    //     .content-2,
-    //     .image {
-    //         display: inline-block;
-    //     }
-
-    //     .row-primary,
-    //     .row-secondary {
-    //         justify-content: center;
-    //         display: flex;
-    //         width: 100%;
-    //     }
-
-    //     .row-primary {
-    //         flex-direction: column;
-    //     }
-
-    //     .primary {
-    //         width: 70%;
-    //         font-size: 3em;
-    //         font-weight: bold;
-    //         text-align: right;
-
-    //         .leading {
-    //             font-size: .5em;
-    //         }
-
-    //         .main {
-    //             font-size: 3.25em;
-    //         }
-
-    //         .sub {
-    //             display: flex;
-    //             justify-content: flex-end;
-    //             font-size: .8em;
-    //             margin-top: -50px;
-    //             margin-right: 10px;
-    //         }
-    //     }
-
-    //     .content-1,
-    //     .content-2 {
-    //         padding: 50px;
-    //     }
-    
-    //     .content-1 {
-    //         width: 50%;
-    //         box-sizing: border-box;
-    //     }
-    //     .content-2 {
-    //         width: 40%;
-    //         text-align: right;
-    //         padding: 40px 70px 0 20%;
-    //     }
-    
-    //     .image-wrapper {
-    //         height: 300px;
-    //         width: 50%;
-    //         // background-color: rebeccapurple;
-    //     }
-        
-    // }
-
-    @media(min-width: 1200px) {
+    @media(min-width: 768px) {
         .content-wrapper {
             width: 80vw;
             max-width: 1200px;
@@ -131,8 +58,11 @@ const StyleWrapper = styled.section`
             width: 100%;
         }
 
+        .row-primary {
+            display: flex;
+        }
+
         .primary {
-            width: 70%;
             font-size: 3em;
             font-weight: bold;
             text-align: right;
@@ -142,14 +72,14 @@ const StyleWrapper = styled.section`
             }
 
             .main {
-                font-size: 3.25em;
+                font-size: 2em;
             }
 
             .sub {
                 display: flex;
                 justify-content: flex-end;
                 font-size: .8em;
-                margin-top: -50px;
+                margin-top: -30px;
                 margin-right: 10px;
             }
         }
@@ -157,17 +87,15 @@ const StyleWrapper = styled.section`
         .content-1,
         .content-2 {
             padding: 50px;
-            height: 200px;
-            
-            // border: solid 1px;
         }
     
         .content-1 {
-            width: 30%;
+            width: 50%;
             box-sizing: border-box;
+            padding: 0 0 0 30px;
         }
         .content-2 {
-            width: 40%;
+            width: 100%;
             text-align: right;
             padding: 40px 70px 0 20%;
         }
@@ -176,6 +104,40 @@ const StyleWrapper = styled.section`
             height: 300px;
             width: 50%;
             // background-color: rebeccapurple;
+        }
+        
+    }
+
+    @media(min-width: 1024px) {
+        .primary {
+            width: 70%;
+
+            .main {
+                font-size: 3.25em;
+            }
+
+            .sub {
+                margin-top: -50px;
+            }
+        }
+
+        .content-1,
+        .content-2 {
+            height: 200px; //TODO: ?
+        }
+    
+        .content-1 {
+            width: 30%;
+        }
+
+        .content-2 {
+            width: 40%;
+        }
+
+        .image-wrapper {
+            height: 300px;
+            width: 50%;
+            margin-top: 20px;
         }
         
     }
@@ -203,14 +165,13 @@ class Skills extends React.Component {
                         </div>
 
                         <div className="content-1">
-                                I specialize in <i>people</i>.  Identifying and communicating core messages to audiences every day is my mission.
-                                Solving the root problem, identifying process gaps, and ensuring consistency is my drive.
+                            I specialize in <i>people</i>.  Providing meaningful design feedback, shaping coding best-practices, and communicating between lines of business are all paths that lead me to the heart of development- creating an application that solves problems for real people.
                         </div>
                     </div>
 
                     <div className="row-secondary">
                         <div className="content-2">
-                                Reviewing content without preconceptions is essential to not missing the forest for the trees. Implementing the best solutions, not just the most convenient, is my strategy.
+                            I solve <i>problems</i>.  I am passionate about finding the root problem, identifying process gaps, and ensuring consistency.  I analyzing designs and code with without preconceptions to ensure never missing the forest for the trees. 
                         </div>
 
                         <div className="image-wrapper">

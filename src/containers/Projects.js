@@ -3,14 +3,14 @@ import Project from '../components/Project';
 import styled from 'styled-components';
 import ProjectsData from '../data/projects';
 import ProjectDetails from '../components/ProjectDetails';
+import ProjectTest from '../components/ProjectTest';
 import Dialog from '../components/Dialog';
 
 const StyleWrapper = styled.section`
     box-sizing: border-box;
     // background: #FE8A75;
-    background: linear-gradient(to bottom, #fe8a7540 0%, #B5CBED 100%);
-    min-height: 100vh;
-    padding: 10vh 10vw;
+    // background: linear-gradient(to bottom, #fe8a7540 0%, #B5CBED 100%);
+    height: 100vh;
 
     .section-heading {
         align-items: center;
@@ -101,21 +101,24 @@ class Projects extends React.Component {
 
     render() {
         const projects = this.buildProjects(),
-            activeProjectDetailsMarkup = this.buildActiveProjectMarkup();
+            activeProjectDetailsMarkup = this.buildActiveProjectMarkup(),
+            data = ProjectsData[this.state.activeProjectId],
+            test = (<ProjectTest {...data}/>);
             
         return (
             <StyleWrapper>
+                {/* {test} */}
+
                 <div className="section-heading">
-                    <h1>Projects</h1>
+                    <h1>Success is not an accident</h1>
 
                     <div className="description">
-                        Most of my work is proprietary, but I enjoy learning more by working on side-projects.
+                        Creating content and devouring the latest changes in technology and design are a must.  Much of my work is proprietary and can fall into periods of large-scale development repetition.  To combat stagnation, I expand my horizons through personal projects.
                     </div>
 
                     <div className="active-project-details-wrapper">
                         {activeProjectDetailsMarkup}
                     </div>
-                    
                 </div>
 
                 <div className="projects-wrapper">

@@ -14,25 +14,42 @@ const StyleWrapper = styled.section`
        width: 100vw;
        padding: 5vw;
        box-sizing: border-box;
-   }
+    }
 
-   .primary {
-        span {
-            margin-right: 5px;
-        }
-        
+    .primary {
+        font-size: 1.5em;
+        font-weight: bold;
+        text-align: right;
+        margin-bottom: 10px;
+
         .leading {
+            font-size: .5em;
         }
 
         .main {
             font-size: 2em;
-            font-weight: bold;
         }
 
         .sub {
-            font-size: 1.25em
+            display: flex;
+            justify-content: flex-end;
+            font-size: .7em;
+            margin-top: -15px;
+            margin-right: 10px;
         }
-   }
+
+    }
+
+    .content-1,
+    .content-2 {
+        font-size: 16px;
+    }
+
+    .content-1 {
+        border-bottom: solid 1px;
+        padding-bottom: 14px;
+        margin-bottom: 14px;
+    }
     
 
     @media(min-width: 768px) {
@@ -64,23 +81,10 @@ const StyleWrapper = styled.section`
 
         .primary {
             font-size: 3em;
-            font-weight: bold;
-            text-align: right;
-
-            .leading {
-                font-size: .5em;
-            }
-
-            .main {
-                font-size: 2em;
-            }
 
             .sub {
-                display: flex;
-                justify-content: flex-end;
                 font-size: .8em;
                 margin-top: -30px;
-                margin-right: 10px;
             }
         }
 
@@ -93,7 +97,9 @@ const StyleWrapper = styled.section`
             width: 50%;
             box-sizing: border-box;
             padding: 0 0 0 30px;
+            border-bottom: none;
         }
+        
         .content-2 {
             width: 100%;
             text-align: right;
@@ -158,20 +164,24 @@ class Skills extends React.Component {
             <StyleWrapper>
                 <div className="content-wrapper">
                     <div className="row-primary">
-                        <div className="primary">
+                        <div className="primary" data-aos="fade-in">
                             <span className="leading">One</span>
                             <span className="main">BOLD</span>
                             <span className="sub">Developer</span>
                         </div>
 
-                        <div className="content-1">
-                            I specialize in <i>people</i>.  Providing meaningful design feedback, shaping coding best-practices, and communicating between lines of business are all paths that lead me to the heart of development- creating an application that solves problems for real people.
+                        <div className="content-1" data-aos="fade-in" data-aos-delay="1000">
+                            <strong>I specialize in <i>people</i>.</strong>
+                            <br/>
+                            Providing meaningful design feedback, shaping coding best-practices, and communicating between lines of business are all paths that lead me to the heart of development- creating an application that solves problems for real people.
                         </div>
                     </div>
 
                     <div className="row-secondary">
-                        <div className="content-2">
-                            I solve <i>problems</i>.  I am passionate about finding the root problem, identifying process gaps, and ensuring consistency.  I analyzing designs and code with without preconceptions to ensure never missing the forest for the trees. 
+                        <div className="content-2" data-aos="fade-in" data-aos-delay="1000">
+                            <strong>I solve <i>problems</i>.</strong>
+                            <br/>
+                            I am passionate about finding the root problem, identifying process gaps, and ensuring consistency.  I analyzing designs and code with without preconceptions to ensure never missing the forest for the trees. 
                         </div>
 
                         <div className="image-wrapper">

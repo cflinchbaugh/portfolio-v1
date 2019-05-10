@@ -85,6 +85,7 @@ class Contact extends React.Component {
         this.state = {
             revealEmail : false
         }
+
     }
 
     render() {
@@ -94,7 +95,7 @@ class Contact extends React.Component {
             <StyleWrapper>
                 <div className="text-content-wrapper">
 
-                    <div className="message">
+                    <div className="message" data-aos="fade-in">
                         You've heard a bit about me,
                         <br/>
                         I'd love to hear from you.

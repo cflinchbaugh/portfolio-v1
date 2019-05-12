@@ -5,9 +5,10 @@ import Tag from './Tag'
 import Checkbox from './Checkbox';
 import learnedImage from '../images/learned.png';
 import lovedImage from '../images/loved.png';
+import linkImage from '../images/link.png';
 
 const StyleWrapper = styled.div`
-    height: 100vh;
+    min-height: 100vh;
     max-width: 100vw;
 
     .project-title {
@@ -17,6 +18,7 @@ const StyleWrapper = styled.div`
 
     .project-summary {
         font-size: .85em;
+        padding-bottom: 10px;
     }
 
     .project-content-wrapper {
@@ -26,13 +28,19 @@ const StyleWrapper = styled.div`
     .project-text-content-wrapper {
         .active-content-text {
             word-break: break-word;
-            margin: 10px;
         }
     }
     
     .project-images-placeholder {
         height: 100px;
         border: solid 1px;
+    }
+
+    .image {
+        width: 100vw;
+        height: 30vh;
+        background-size: cover;
+        background-color: #98004b;
     }
 
     .project-link-wrapper {
@@ -46,6 +54,22 @@ const StyleWrapper = styled.div`
     .tag-wrapper {
         display: inline-block;
         margin: 5px;
+    }
+
+    .content-icons-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .content {
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .content-text-label {
+        font-weight: bold;
+        font-size: 1em;
     }
 
     @media(min-width: 768px) {
@@ -97,7 +121,7 @@ const StyleWrapper = styled.div`
             padding: 5px 10px;
             
             .project-title {
-                font-size: 5em;
+                font-size: 3.5em;
             }
             .project-summary {
                 font-size: 1.5em;
@@ -112,8 +136,21 @@ const StyleWrapper = styled.div`
 
         .project-content-wrapper {
             display: flex;
+        }
+        .project-content-wrapper.default {
             align-self: flex-end;
         }
+
+
+        .project-content-wrapper.alternate {
+            align-self: flex-start;
+
+            .active-content-text {
+                text-align: left;
+            }
+        }
+
+        
     
         .project-text-content-wrapper {
             display: flex;
@@ -121,10 +158,22 @@ const StyleWrapper = styled.div`
             text-align: right;
             box-sizing: border-box;
             margin: 5vh 5vw;
-            height: 40vh;
             width: 40vw;
             justify-content: space-between;
+            
+        }
+
+        .content-text-label {
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        .active-content-text {
             overflow-y: auto;
+            height: 30vh;
+            margin: 10px;
+            padding: 20px;
+            font-size: .9em;
         }
     }
 
@@ -173,7 +222,7 @@ class ProjectDetails extends React.PureComponent {
                 <div className={`image ${configClass}`}
                     data-aos="fadein" 
                     style={{backgroundImage: `url(${imageUrl})`}}
-                    data-aos-delay="500">
+                    >
                 </div>
 
                 <div className={`content ${configClass}`}>
@@ -185,11 +234,15 @@ class ProjectDetails extends React.PureComponent {
                         <div className="project-summary">
                             {this.props.summary}
                         </div>
+
+                        <div className="project-link-wrapper">
+                            {links}
+                            {/* <div>Icons made by <a href="https://www.flaticon.com/authors/creaticca-creative-agency" title="Creaticca Creative Agency">Creaticca Creative Agency</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> */}
+                        </div>
                     </div>
 
-                    
-                    <div className="project-content-wrapper">
-                        <div className="project-text-content-wrapper" data-aos="fadein" data-aos-delay="1000">
+                    <div className={`project-content-wrapper ${configClass}`}>
+                        <div className="project-text-content-wrapper" data-aos="fadein" data-aos-delay="750">
                             <div className="active-content-text" >
                                 {activeContentText}
                             </div>
@@ -202,9 +255,7 @@ class ProjectDetails extends React.PureComponent {
                         </div>
                     </div>
                     
-                    <div className="project-link-wrapper">
-                        {links}
-                    </div>
+                    
                     
                     {/* <div className="poject-tags-wrapper">
                         {tags}
@@ -237,15 +288,45 @@ class ProjectDetails extends React.PureComponent {
 
         switch(this.state.activeContentText) {
             case ('learned'):
-                activeContentText = this.props.learned;
+                activeContentText = (
+                    <React.Fragment>
+                        <div className="content-text-label">
+                            Learned
+                        </div>
+                        <div>
+                            {this.props.learned}
+                        </div>
+                    </React.Fragment>
+                )
+
                 break;
 
             case ('loved'):
-                activeContentText = this.props.loved;
+                activeContentText = (
+                    <React.Fragment>
+                        <div className="content-text-label">
+                            Loved
+                        </div>
+                        <div>
+                            {this.props.loved}
+                        </div>
+                    </React.Fragment>
+                )
+
                 break;
 
             case ('description'):
-                activeContentText = this.props.description;
+                activeContentText = (
+                    <React.Fragment>
+                        <div className="content-text-label">
+                            Description
+                        </div>
+                        <div>
+                            {this.props.description}
+                        </div>
+                    </React.Fragment>
+                )
+
                 break;
         }
 
@@ -258,6 +339,7 @@ class ProjectDetails extends React.PureComponent {
         this.props.links.forEach((linkData, idx) => {
             linksMarkup.push(
                 <a href={linkData.url} target='_blank' key={idx}>
+                    <img src={`${linkImage}`}></img>
                     {linkData.label}
                 </a>
             );

@@ -181,7 +181,7 @@ module.exports = {
                       loader: require.resolve('css-loader'),
                       options: {
                         importLoaders: 1,
-                        minimize: true,
+                        // minimize: true, //Removed per https://github.com/webpack-contrib/css-loader/issues/863 && https://github.com/patrikx3/gitlist/blob/master/webpack.config.js#L211
                         sourceMap: shouldUseSourceMap,
                       },
                     },

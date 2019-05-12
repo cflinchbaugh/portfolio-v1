@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Tag from './Tag'
 import Checkbox from './Checkbox';
-import learnolotlImage from '../images/learnolotl.png';
 import learnedImage from '../images/learned.png';
 import lovedImage from '../images/loved.png';
 
 const StyleWrapper = styled.div`
     height: 100vh;
-    width: 100vw;
+    max-width: 100vw;
 
     .project-title {
         font-size: 2em;
@@ -49,70 +48,86 @@ const StyleWrapper = styled.div`
         margin: 5px;
     }
 
-        @media(min-width: 768px) {
-            display: flex;
-            position: relative;
+    @media(min-width: 768px) {
+        display: flex;
+        position: relative;
 
-            .image,
-            .content {
-                height: 100vh;
-                display: inline-flex;
-                flex-direction: column;
-            }
+        .image,
+        .content {
+            height: 100vh;
+            display: inline-flex;
+            flex-direction: column;
+        }
 
-            .image {
-                width: 30%;
-                background-color: #98004b;
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repea
-            }
-
-            .content {
-                width: 70%;
-                justify-content: flex-end;
-            }
-
-            .project-identifier-wrapper {
-                position: absolute;
-                top: 15vh;
-                left: 25vw;
-                background: #ffffff86;
-                padding: 5px 10px;
-                
-                .project-title {
-                    font-size: 5em;
-                }
-                .project-summary {
-                    font-size: 1.5em;
-                }
-            }
-
-            .content-icons-wrapper {
-                display: flex;
-                justify-content: flex-end;
-            }
-
-
-            .project-content-wrapper {
-                display: flex;
-                align-self: flex-end;
-            }
+        .image {
+            width: 30%;
+            background-color: #98004b;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
         
-            .project-text-content-wrapper {
-                display: flex;
-                flex-direction: column;
-                text-align: right;
-                box-sizing: border-box;
-                margin: 5vh 5vw;
-                height: 40vh;
-                width: 40vw;
-                justify-content: space-between;
-                overflow-y: auto;
+        .image.default {
+            order: 1;
+        }
+
+        .image.alternate {
+            order: 2;
+        }
+
+        .content {
+            width: 70%;
+            justify-content: flex-end;
+            order: 2;
+        }
+
+        .content.default {
+            order: 2;
+        }
+
+        .content.alternate {
+            order: 1;
+        }
+
+        .project-identifier-wrapper {
+            position: absolute;
+            top: 15vh;
+            left: 25vw;
+            background: #ffffff86;
+            padding: 5px 10px;
+            
+            .project-title {
+                font-size: 5em;
+            }
+            .project-summary {
+                font-size: 1.5em;
             }
         }
 
+        .content-icons-wrapper {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+
+        .project-content-wrapper {
+            display: flex;
+            align-self: flex-end;
+        }
+    
+        .project-text-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+            box-sizing: border-box;
+            margin: 5vh 5vw;
+            height: 40vh;
+            width: 40vw;
+            justify-content: space-between;
+            overflow-y: auto;
+        }
     }
+
 
 `
 
@@ -150,15 +165,19 @@ class ProjectDetails extends React.PureComponent {
                 image: lovedImage
                 //<a href="https://icons8.com/icon/14945/romance">Romance icon by Icons8</a>
             },
-            imageUrl = learnolotlImage
+            imageUrl = this.props.imageUrl,
+            configClass = this.props.config
 
         return (
             <StyleWrapper>
-                <div className="image" style={{backgroundImage: `url(${imageUrl})`}}>
+                <div className={`image ${configClass}`}
+                    data-aos="fadein" 
+                    style={{backgroundImage: `url(${imageUrl})`}}
+                    data-aos-delay="500">
                 </div>
 
-                <div className="content">
-                    <div className="project-identifier-wrapper">
+                <div className={`content ${configClass}`}>
+                    <div className="project-identifier-wrapper"  data-aos="fadein">
                         <div className="project-title">
                             {this.props.title}
                         </div>
@@ -170,8 +189,8 @@ class ProjectDetails extends React.PureComponent {
 
                     
                     <div className="project-content-wrapper">
-                        <div className="project-text-content-wrapper">
-                            <div className="active-content-text">
+                        <div className="project-text-content-wrapper" data-aos="fadein" data-aos-delay="1000">
+                            <div className="active-content-text" >
                                 {activeContentText}
                             </div>
                             
@@ -181,21 +200,15 @@ class ProjectDetails extends React.PureComponent {
                             </div>
                             
                         </div>
-
-                        {/* <div className="project-images-placeholder">
-                        </div> */}
                     </div>
                     
-                    {/* <div className="project-link-wrapper">
+                    <div className="project-link-wrapper">
                         {links}
-                    </div> */}
+                    </div>
                     
                     {/* <div className="poject-tags-wrapper">
                         {tags}
                     </div> */}
-
-
-                    
 
                 </div>
             </StyleWrapper>
@@ -266,7 +279,12 @@ class ProjectDetails extends React.PureComponent {
 
 }
 
+ProjectDetails.defaultProps = {
+    config: 'default'
+}
+
 ProjectDetails.propTypes = {
+    config: PropTypes.oneOf(['default', 'alternate']),
     title: PropTypes.string.isRequired,
     summary: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,

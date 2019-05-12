@@ -6,6 +6,10 @@ import ProjectDetails from '../components/ProjectDetails';
 import ProjectTest from '../components/ProjectTest';
 import Dialog from '../components/Dialog';
 
+import learnolotlImage from '../images/learnolotl.png';
+import didiAndSmilingJohnsImage from '../images/didiAndSmilingJohns.png';
+import codePenImage from '../images/codePen.png';
+
 const StyleWrapper = styled.section`
     box-sizing: border-box;
     // background: #FE8A75;
@@ -102,12 +106,24 @@ class Projects extends React.Component {
     render() {
         const projects = this.buildProjects(),
             activeProjectDetailsMarkup = this.buildActiveProjectMarkup(),
-            data = ProjectsData[this.state.activeProjectId],
-            test = (<ProjectTest {...data}/>);
+            ProjectLearnolotl = this.buildLearnolotl(),
+            ProjectDiDi = this.buildDiDi(),
+            ProjectCodePen = this.buildCodePen();
+
             
+
+        return (
+            <div>
+                {ProjectLearnolotl}
+
+                {ProjectDiDi}
+
+                {ProjectCodePen}
+            </div>
+        )
         return (
             <StyleWrapper>
-                {/* {test} */}
+                {test}
 
                 <div className="section-heading">
                     <h1>Success is not an accident</h1>
@@ -129,6 +145,34 @@ class Projects extends React.Component {
 
             </StyleWrapper>
         );
+    }
+
+    buildLearnolotl() {
+        const data = {
+                ...ProjectsData['learnolotlData'],
+                imageUrl: learnolotlImage
+            }
+            
+        return (<ProjectTest {...data}/>)
+    }
+
+    buildDiDi() {
+        const data = {
+                ...ProjectsData['didiAndSmilingJohnsData'],
+                imageUrl: didiAndSmilingJohnsImage,
+                config: 'alternate'
+            }
+
+        return (<ProjectTest {...data}/>)
+    }
+
+    buildCodePen() {
+        const data = {
+                ...ProjectsData['codePenData'],
+                imageUrl: codePenImage
+            }
+
+        return (<ProjectTest {...data}/>)
     }
 
     buildActiveProjectMarkup() {

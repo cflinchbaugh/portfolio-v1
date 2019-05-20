@@ -38,6 +38,7 @@ const StyleWrapper = styled.div`
 
     .image {
         width: 100vw;
+        max-width: 100%;
         height: 30vh;
         background-size: cover;
         background-color: #98004b;

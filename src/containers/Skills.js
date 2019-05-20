@@ -12,6 +12,7 @@ const StyleWrapper = styled.section`
 
    .content-wrapper {
        width: 100vw;
+       max-width: 100%;
        padding: 5vw;
        box-sizing: border-box;
     }

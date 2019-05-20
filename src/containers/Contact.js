@@ -108,7 +108,6 @@ class Contact extends React.Component {
 
                         <span onClick={ ()=>{ this.setState({ revealEmail: true})}}>
                         <a href="mailto:christopher.e.flinchbaugh@gmail.com">
-                            {/* <span className="email-icon">@</span> */}
                             <img src={`${Email}`} alt="Email Logo"></img>
                         </a>
                         </span>

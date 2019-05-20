@@ -1,7 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import styled from 'styled-components';
-import Navigation from '../components/Navigation';
+// import Navigation from '../components/Navigation';
 import Home from './Home';
 import About from './About';
 import Skills from './Skills';

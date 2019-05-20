@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import Drawer from '../components/Drawer';
-import MusicNote from '../images/MusicNote.png';
 import laptopImage from '../images/laptop.png';
 import readingImage from '../images/reading.png';
 import travelImage from '../images/travel.png';
+import spotifyImage from '../images/spotify.png';
 
 const StyleWrapper = styled.section`
     display: flex;
@@ -60,7 +60,7 @@ class About extends React.Component {
 
     render() {
         const drawerData = {
-                label: <img src={`${MusicNote}`}></img>
+                label: <img src={`${spotifyImage}`} alt="Spotify Logo"></img>
             },
             imageUrl = this.buildImageUrl();
 
@@ -73,7 +73,7 @@ class About extends React.Component {
                         <h1>About</h1>
 
                         <p>
-                            If you're looking for my education & professional background, see <a href="https://www.linkedin.com/in/christopher-flinchbaugh/" target="_blank">LinkedIn</a>.
+                            If you're looking for my education & professional background, see <a href="https://www.linkedin.com/in/christopher-flinchbaugh/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
                         </p>
 
                         <p>
@@ -93,7 +93,8 @@ class About extends React.Component {
                         height="380" 
                         frameBorder="0" 
                         allowtransparency="true" 
-                        allow="encrypted-media">
+                        allow="encrypted-media"
+                        title="Spotify Playlist">
                     </iframe>
                 </Drawer>
             </StyleWrapper>

@@ -218,13 +218,13 @@ class Project extends React.PureComponent {
         return (
             <StyleWrapper>
                 <div className={`image ${configClass}`}
-                    data-aos="fadein" 
+                    data-aos="fade-in" 
                     style={{backgroundImage: `url(${imageUrl})`}}
                     >
                 </div>
 
                 <div className={`content ${configClass}`}>
-                    <div className="project-identifier-wrapper"  data-aos="fadein">
+                    <div className="project-identifier-wrapper"  data-aos="fade-in">
                         <div className="project-title">
                             {this.props.title}
                         </div>
@@ -240,7 +240,7 @@ class Project extends React.PureComponent {
                     </div>
 
                     <div className={`project-content-wrapper ${configClass}`}>
-                        <div className="project-text-content-wrapper" data-aos="fadein" data-aos-delay="750">
+                        <div className="project-text-content-wrapper" data-aos="fade-in" data-aos-delay="750">
                             <div className="active-content-text" >
                                 {activeContentText}
                             </div>

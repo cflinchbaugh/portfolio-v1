@@ -36,7 +36,7 @@ const StyleWrapper = styled.section`
         padding: 2vh 2vw;
 
         p {
-            flex: 2;
+            width: 50vw;
             margin: 0 10px 0 0;
         }
     }
@@ -70,13 +70,13 @@ class About extends React.Component {
 
                 <div>
                     <div className="about-content-wrapper">
-                        <h1>About</h1>
+                        <h1>When the laptop closes...</h1>
 
-                        <p>
+                        {/* <p>
                             If you're looking for my education & professional background, see <a href="https://www.linkedin.com/in/christopher-flinchbaugh/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
-                        </p>
+                        </p> */}
 
-                        <p>
+                        <p className="about-summary">
                             Between dev-times you can find me studying Japanese, listening to lo-fi while sketching, or putting off my backlog of games in favor of some exercise.
                         </p>
                     </div>

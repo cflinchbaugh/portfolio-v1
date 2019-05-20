@@ -13,9 +13,15 @@ const StyleWrapper = styled.section`
     // background: linear-gradient(to bottom, #fe8a7540 0%, #B5CBED 100%);
     min-height: 100vh;
 
+    // .projects-heading {
+    //     height: 100vh;
+    //     max-width: 100vw;
+    // }
+
     .projects-heading {
-        height: 100vh;
-        max-width: 100vw;
+        color: #98004b;
+        font-size: 2em;
+        filter: drop-shadow(5px 5px 2px pink);
     }
 `
 
@@ -36,6 +42,8 @@ class Projects extends React.Component {
                         Creating content and devouring the latest changes in technology and design are a must.  Much of my work is proprietary and can fall into periods of large-scale development repetition.  To combat stagnation, I expand my horizons through personal projects.
                     </div>
                 </div> */}
+
+                <div className="projects-heading" data-aos="fade">Selected works~</div>
                 
                 {ProjectLearnolotl}
 

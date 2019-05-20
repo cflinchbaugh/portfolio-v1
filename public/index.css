@@ -6,7 +6,12 @@ body {
 }
 
 a {
-    color: #8ED4A3;
+    color: #CF0276;
+    transition: color 0.15s;
+}
+
+a:hover {
+  color: #98004b
 }
 
 ::-webkit-scrollbar {

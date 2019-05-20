@@ -103,7 +103,7 @@ class ProjectDetails extends React.PureComponent {
 
         this.props.links.forEach((linkData, idx) => {
             linksMarkup.push(
-                <a href={linkData.url} target='_blank' key={idx}>
+                <a href={linkData.url} target='_blank' rel="noopener noreferrer" key={idx}>
                     {linkData.label}
                 </a>
             );

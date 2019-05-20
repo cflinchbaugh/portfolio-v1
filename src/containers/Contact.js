@@ -102,19 +102,19 @@ class Contact extends React.Component {
                     </div>
                     
                     <div className="contact-info">
-                        <a href="https://www.linkedin.com/in/christopher-flinchbaugh/" target="_blank">
-                            <img src={`${LinkedIn}`}></img>
+                        <a href="https://www.linkedin.com/in/christopher-flinchbaugh/" target="_blank" rel="noopener noreferrer">
+                            <img src={`${LinkedIn}`} alt="LinkedIn Logo"></img>
                         </a>
 
                         <span onClick={ ()=>{ this.setState({ revealEmail: true})}}>
                         <a href="mailto:christopher.e.flinchbaugh@gmail.com">
                             {/* <span className="email-icon">@</span> */}
-                            <img src={`${Email}`}></img>
+                            <img src={`${Email}`} alt="Email Logo"></img>
                         </a>
                         </span>
 
-                        <a href="https://github.com/cflinchbaugh" target="_blank">
-                            <img src={`${GitHub}`}></img>
+                        <a href="https://github.com/cflinchbaugh" target="_blank" rel="noopener noreferrer">
+                            <img src={`${GitHub}`} alt="GitHub Logo"></img>
                         </a>
                     </div>
 

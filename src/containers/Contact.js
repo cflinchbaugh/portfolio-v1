@@ -58,12 +58,16 @@ const StyleWrapper = styled.section`
 
     }
     
-    .show {
-        display: block;
+    .email-address {
+        transition: opacity .75s;
     }
 
-    .hide {
-        display: none;
+    .show-opacity {
+        opacity: 1;
+    }
+
+    .hide-opacity {
+        opacity: 0;
     }
 
     @media(min-width: 768px) {
@@ -89,12 +93,11 @@ class Contact extends React.Component {
     }
 
     render() {
-        const emailClass = this.state.revealEmail ? 'show' : 'hide';
+        const emailClass = this.state.revealEmail ? 'show-opacity' : 'hide-opacity';
 
         return (
             <StyleWrapper>
                 <div className="text-content-wrapper">
-
                     <div className="message" data-aos="fade-in">
                         You've heard a bit about me,
                         <br/>
@@ -117,9 +120,10 @@ class Contact extends React.Component {
                         </a>
                     </div>
 
-                    <div className={`${emailClass}`}>
+                    <div className={`email-address ${emailClass}`}>
                         christopher.e.flinchbaugh@gmail.com
                     </div>
+
                 </div>
             </StyleWrapper>
         );

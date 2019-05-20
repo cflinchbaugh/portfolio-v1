@@ -31,6 +31,7 @@ const StyleWrapper = styled.section`
 
     .contact-info {
         display: flex;
+        margin-bottom: 20px;
         
         a {
             display: inline-flex;

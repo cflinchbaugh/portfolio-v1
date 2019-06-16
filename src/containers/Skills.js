@@ -182,7 +182,7 @@ class Skills extends React.Component {
                         <div className="content-2" data-aos="fade-in" data-aos-delay="1000">
                             <strong>I solve <i>problems</i>.</strong>
                             <br/>
-                            I am passionate about finding the root problem, identifying process gaps, and ensuring consistency.  I analyzing designs and code without preconceptions to ensure never missing the forest for the trees. 
+                            I am passionate about finding the root problem, identifying process gaps, and ensuring consistency.  I strive to analyze designs and code without preconceptions to ensure never missing the forest for the trees. 
                         </div>
 
                         <div className="image-wrapper">

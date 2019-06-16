@@ -43,7 +43,7 @@ class Projects extends React.Component {
                     </div>
                 </div> */}
 
-                <div className="projects-heading" data-aos="fade">Selected works~</div>
+                {/* <div className="projects-heading" data-aos="fade">Selected works~</div> */}
                 
                 {ProjectLearnolotl}
 

@@ -88,7 +88,7 @@ class About extends React.Component {
                 </div>
 
                 <Drawer {...drawerData}>
-                    <iframe src="https://open.spotify.com/embed/user/cflinchbaugh/playlist/7HkhlScz0CvGHRJaMORxYw" 
+                    <iframe src="https://open.spotify.com/embed/playlist/7HkhlScz0CvGHRJaMORxYw" 
                         width="300" 
                         height="380" 
                         frameBorder="0" 

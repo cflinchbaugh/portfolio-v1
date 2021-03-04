@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Tag from './Tag'
 import Checkbox from './Checkbox';
+import descriptionImage from '../images/magnifyingGlass.png';
 import learnedImage from '../images/learned.png';
 import lovedImage from '../images/loved.png';
 import linkImage from '../images/link.png';
@@ -46,6 +47,11 @@ const StyleWrapper = styled.div`
 
     .project-link-wrapper {
         margin-bottom: 20px;
+
+        img {
+            width: 12px;
+            padding-right: 5px;
+        }
 
         a {
             margin-right: 20px;
@@ -118,7 +124,7 @@ const StyleWrapper = styled.div`
             position: absolute;
             top: 15vh;
             left: 25vw;
-            background: #ffffff86;
+            background: #ffffffe3;
             padding: 5px 10px;
             
             .project-title {
@@ -184,6 +190,7 @@ class Project extends React.PureComponent {
     constructor(props) {
         super(props);
 
+        this.handleClickDescription = this.handleClickDescription.bind(this);
         this.handleClickLearned = this.handleClickLearned.bind(this);
         this.handleClickLoved = this.handleClickLoved.bind(this);
 
@@ -195,6 +202,15 @@ class Project extends React.PureComponent {
     render() {
         const links = this.buildLinksMarkup(), 
             activeContentText = this.buildActiveContentText(),
+            descriptionCheckboxData = {
+                ariaLabel: 'description',
+                checked: this.state.activeContentText === 'description',
+                handleChangeCheckbox: this.handleClickDescription,
+                id: 'description',
+                label: 'Description',
+                image: descriptionImage
+                //<a href="https://icons8.com/icon/2070/brain">Brain icon by Icons8</a>
+            },
             learnedCheckboxData = {
                 ariaLabel: 'learned',
                 checked: this.state.activeContentText === 'learned',
@@ -247,6 +263,7 @@ class Project extends React.PureComponent {
                             </div>
                             
                             <div className="content-icons-wrapper">
+                                <Checkbox {...descriptionCheckboxData}/>
                                 <Checkbox {...learnedCheckboxData}/>
                                 <Checkbox {...lovedCheckboxData}/>
                             </div>
@@ -266,19 +283,21 @@ class Project extends React.PureComponent {
     }
 
 
-    handleClickLearned(checked) {
-        let activeText = checked ? 'learned' : 'description';
-
+    handleClickDescription() {
         this.setState({
-            activeContentText: activeText
+            activeContentText: 'description'
         });
     }
 
-    handleClickLoved(checked) {
-        let activeText = checked ? 'loved' : 'description';
-
+    handleClickLearned() {
         this.setState({
-            activeContentText: activeText
+            activeContentText: 'learned'
+        });
+    }
+
+    handleClickLoved() {
+        this.setState({
+            activeContentText: 'loved'
         });
     }
 

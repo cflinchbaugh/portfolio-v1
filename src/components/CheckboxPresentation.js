@@ -100,7 +100,7 @@ function CheckboxPresentation(props) {
         disabledCheckboxClass = props.disabled ? 'checkbox-disabled' : 'checkbox-enabled',
         disabledLabelClass = props.disabled ? 'checkbox-label-disabled' : 'checkbox-label-enabled',
         label = typeof(props.label) === 'undefined' ? 
-            '' : (<label htmlFor={props.id} className={`checkbox-label ${disabledLabelClass} unselectable`}>{ props.label }</label>),
+            '' : (<div className={`checkbox-label ${disabledLabelClass} unselectable`}>{ props.label }</div>),
         hoverClass = props.hovered ? 'hover' : '',
         checkedClass= props.checked ? 'checked' : 'unchecked';
 

@@ -79,7 +79,7 @@ class Home extends React.Component {
 
                     <div className="bio">
                         <div className="name">Chris Flinchbaugh</div>
-                        <div className="title">Front-End Developer | UI/UX Engineer</div>
+                        <div className="title">Sr. Front-End Developer | UI/UX Engineer</div>
                     </div>
 
                     <ArrowButton handleClick={this.handleClickArrow} />

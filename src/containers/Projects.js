@@ -29,7 +29,7 @@ class Projects extends React.Component {
   render() {
     const ProjectLearnolotl = this.buildLearnolotl(),
       ProjectDiDi = this.buildDiDi(),
-      ProjectGuild = this.buildGuild(),
+      // ProjectGuild = this.buildGuild(),
       ProjectCodePen = this.buildCodePen();
 
     return (
@@ -44,7 +44,7 @@ class Projects extends React.Component {
 
         {/* <div className="projects-heading" data-aos="fade">Selected works~</div> */}
 
-        {ProjectGuild}
+        {/* {ProjectGuild} */}
 
         {ProjectLearnolotl}
 

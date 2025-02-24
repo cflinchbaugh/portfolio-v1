@@ -1,6 +1,6 @@
 # Description
 
-DEPRECATED, see current version [here](https://cflinchbaugh.github.io/portfolio)
+DEPRECATED, see current version [here](https://github.com/cflinchbaugh/portfolio/)
 
 A (now deprecated) portfolio website which highlighted the person behind the keyboard, his accomplishments, skills, and personal philosophy as a software engineer.
 
